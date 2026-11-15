@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#34251d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<title>Docetto | Confeitaria</title>
+<style>
+:root{--ink:#34251d;--brown:#654735;--cream:#f5efe5;--sand:#e6d7c3;--white:#fffdf9;--muted:#806f61}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--white);color:var(--ink);font-family:"DM Sans",Arial,Helvetica,sans-serif}
+header{background:var(--cream);border-bottom:1px solid #e9dfd2;position:sticky;top:0;z-index:5}
+.nav{max-width:1100px;margin:auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:"Playfair Display",Georgia,serif;font-size:27px;letter-spacing:2px;font-weight:bold}.brand span{color:var(--brown)}
+nav a{color:var(--ink);text-decoration:none;margin-left:24px;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+.hero{background:linear-gradient(120deg,#f5efe5 0%,#eee2d2 100%);padding:82px 24px 76px}
+.hero-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--brown);font-weight:bold}
+h1{font:500 clamp(42px,6vw,68px)/1.08 "Playfair Display",Georgia,serif;letter-spacing:-1.5px;margin:18px 0;color:var(--ink)}
+.hero p{max-width:460px;color:#6e5b4c;line-height:1.8;font-size:16px}
+.cta{display:inline-block;background:var(--ink);color:white;text-decoration:none;padding:15px 23px;margin-top:15px;font:600 11px "DM Sans",Arial,sans-serif;letter-spacing:1.8px;text-transform:uppercase;transition:background .2s,transform .2s}.cta:hover{background:#654735;transform:translateY(-2px)}
+.hero-art{min-height:300px;border-radius:4px;background:#d8c3a9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-art:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:#eadbc8;right:-30px;top:-80px}
+.hero-art:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;border:1px solid #b99c7d;left:-70px;bottom:-110px}
+.plate{position:relative;z-index:1;width:245px;height:245px;border-radius:50%;background:#f8f2e9;box-shadow:0 18px 35px #72573b40;display:flex;align-items:center;justify-content:center;gap:8px}
+.cookie{width:92px;height:92px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#bd8b59,#75452c 70%);box-shadow:inset -8px -7px 0 #5d3525;position:relative}
+.cookie:before{content:"";position:absolute;inset:15px;background:radial-gradient(circle at 25% 20%,#3d241b 0 4px,transparent 5px),radial-gradient(circle at 65% 35%,#3d241b 0 5px,transparent 6px),radial-gradient(circle at 40% 70%,#3d241b 0 5px,transparent 6px),radial-gradient(circle at 80% 75%,#3d241b 0 4px,transparent 5px)}
+.brownie{width:78px;height:82px;border-radius:8px;background:linear-gradient(145deg,#75452e,#3e241b);box-shadow:inset 0 7px 0 #a56b46,5px 9px 15px #4b2d1d55;transform:rotate(7deg)}
+section{max-width:1100px;margin:auto;padding:76px 24px}
+.section-head{text-align:center;margin-bottom:38px}.section-head h2{font:500 38px "Playfair Display",Georgia,serif;letter-spacing:-.5px;margin:10px 0}.section-head p{color:var(--muted);font-size:14px}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.product{border:1px solid #e9dfd2;background:white}.product-visual{height:230px;background:var(--cream);display:flex;align-items:center;justify-content:center}
+.product-visual .cookie{width:145px;height:145px}.product-visual .brownie{width:132px;height:138px}
+.product-info{padding:23px}.product-info h3{font:500 25px "Playfair Display",Georgia,serif;margin:0 0 8px}.product-info p{color:var(--muted);font-size:13px;line-height:1.6;min-height:40px}
+.price-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px}.price{font-weight:bold;font-size:19px}
+.product-actions{display:flex;align-items:center;gap:9px}.quantity-control{display:flex;align-items:center;border:1px solid #d9cbbb;background:#fffdf9;height:38px}.quantity-control button{width:30px;height:36px;border:0;background:transparent;color:#654735;font-size:20px;cursor:pointer}.quantity-control span{min-width:20px;text-align:center;font-size:13px;font-weight:600}
+.add{border:0;background:var(--ink);color:white;padding:12px 17px;cursor:pointer;font:600 11px "DM Sans",Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;transition:background .2s}.add:hover{background:#654735}
+.order{background:var(--cream);max-width:none}.order-inner{max-width:760px;margin:auto;padding:0 24px}.order h2{text-align:center;font:500 38px "Playfair Display",Georgia,serif;letter-spacing:-.5px;margin:0 0 10px}.sub{text-align:center;color:var(--muted);font-size:14px;margin-bottom:30px}
+.cart{background:white;border:1px solid #e4d8c9;padding:22px;margin-bottom:20px}.cart-line{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #eee7de;font-size:14px}.total{display:flex;justify-content:space-between;padding-top:17px;font-weight:bold}
+form{display:grid;gap:14px}label{font-size:12px;letter-spacing:.5px;font-weight:bold}input,select,textarea{width:100%;padding:14px;border:1px solid #d9cbbb;background:#fffdf9;font:14px Arial;color:var(--ink);margin-top:7px}
+.submit{background:var(--ink);color:white;border:0;padding:16px;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;font-size:12px}
+.note{font-size:12px;color:var(--muted);line-height:1.7;text-align:center;margin-top:17px}
+.instagram-float{position:fixed;right:18px;bottom:18px;z-index:10;background:#f5efe5;border:1px solid #cdb99f;color:#654735;text-decoration:none;padding:12px 15px;font-size:12px;font-weight:bold;letter-spacing:.3px;box-shadow:0 5px 18px #34251d22}
+footer{background:var(--ink);color:#e9dfd2;padding:34px 24px;text-align:center}
+footer .brand{color:#fff;font-size:23px}footer p{font-size:12px;color:#c8b8a7;line-height:1.8}footer a{color:#ead7c0;text-decoration:none}
+@media(max-width:700px){.hero-inner{grid-template-columns:1fr}.hero{padding-top:55px}.hero-art{min-height:240px}.products{grid-template-columns:1fr}nav a{margin-left:10px;font-size:10px}.nav{padding:15px}.brand{font-size:22px}}
+@media(max-width:420px){.price-row{align-items:flex-start;flex-direction:column}.product-actions{width:100%;justify-content:space-between}}
+
+.dialog-backdrop{position:fixed;inset:0;background:#21170f99;display:none;align-items:center;justify-content:center;padding:22px;z-index:30}
+.dialog-backdrop.show{display:flex}
+.dialog{width:min(100%,440px);background:#fffdf9;border:1px solid #d9c7b0;padding:34px 30px 28px;box-shadow:0 24px 70px #1c120c40;text-align:center}
+.dialog-mark{font:600 13px "Playfair Display",Georgia,serif;letter-spacing:3px;color:#8a674b}
+.dialog h3{font:500 29px "Playfair Display",Georgia,serif;margin:14px 0 10px}
+.dialog p{font-size:14px;line-height:1.75;color:#806f61;margin:0 0 22px}
+.dialog button{width:100%;background:#34251d;color:white;border:0;padding:15px;font:600 11px "DM Sans",Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer}
+.dialog .secondary{background:transparent;color:#654735;border:1px solid #d9cbbb;margin-top:9px}
+@media(max-width:700px){.dialog{padding:28px 22px}}
+
+.payment-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.payment-choice{position:relative;display:block;cursor:pointer}
+.payment-choice input{position:absolute;opacity:0;pointer-events:none}
+.payment-card{display:flex;align-items:center;gap:11px;padding:15px;border:1px solid #d9cbbb;background:#fffdf9;color:#654735;min-height:58px;transition:all .2s}
+.payment-card .payment-symbol{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#f1e7da;font-size:14px}
+.payment-card strong{font:600 13px "DM Sans",Arial,sans-serif;letter-spacing:.2px}
+.payment-choice input:checked+.payment-card{border:1.5px solid #654735;background:#f5efe5;box-shadow:inset 0 0 0 1px #654735}
+.payment-choice input:focus-visible+.payment-card{outline:2px solid #9a7655;outline-offset:3px}
+.change-field{display:none;margin-top:12px;padding:15px;background:#f5efe5;border:1px solid #e5d8c7}
+.change-field.show{display:block}
+.change-field p{font-size:12px;color:#806f61;margin:0 0 8px;line-height:1.5}
+@media(max-width:420px){.payment-options{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="brand">DOCE<span>TTO</span></div><nav><a href="#cardapio">Cardápio</a><a href="#pedido">Fazer pedido</a></nav></div></header>
+<main>
+<div class="hero"><div class="hero-inner"><div><div class="eyebrow">Confeitaria • Feito para apreciar</div><h1>Um doce momento,<br>com sabor marcante.</h1><p>Cookies e brownies preparados para transformar pequenas pausas em momentos especiais.</p><a class="cta" href="#cardapio">Conheça o cardápio</a></div><div class="hero-art"><div class="plate"><div class="cookie"></div><div class="brownie"></div></div></div></div></div>
+<section id="cardapio"><div class="section-head"><div class="eyebrow">Nosso cardápio</div><h2>Escolhas da Docetto</h2><p>Simples, especiais e feitos para você.</p></div>
+<div class="products">
+<article class="product"><div class="product-visual"><div class="cookie"></div></div><div class="product-info"><h3>Cookie</h3><p>Cookie artesanal com textura macia e sabor intenso.</p><div class="price-row"><span class="price">R$ 10,00</span><div class="product-actions"><div class="quantity-control"><button type="button" aria-label="Diminuir quantidade de Cookie" onclick="changeQty('Cookie',-1)">−</button><span id="qty-Cookie">1</span><button type="button" aria-label="Aumentar quantidade de Cookie" onclick="changeQty('Cookie',1)">+</button></div><button class="add" onclick="add('Cookie')">Adicionar</button></div></div></div></article>
+<article class="product"><div class="product-visual"><div class="brownie"></div></div><div class="product-info"><h3>Brownie</h3><p>Brownie de chocolate, com sabor rico e irresistível.</p><div class="price-row"><span class="price">R$ 10,00</span><div class="product-actions"><div class="quantity-control"><button type="button" aria-label="Diminuir quantidade de Brownie" onclick="changeQty('Brownie',-1)">−</button><span id="qty-Brownie">1</span><button type="button" aria-label="Aumentar quantidade de Brownie" onclick="changeQty('Brownie',1)">+</button></div><button class="add" onclick="add('Brownie')">Adicionar</button></div></div></div></article>
+</div></section>
+<div class="order" id="pedido"><div class="order-inner"><section style="padding:65px 0"><h2>Faça seu pedido</h2><p class="sub">Escolha seus produtos e preencha os dados para enviar seu pedido.</p>
+<div class="cart"><div id="items"><div class="cart-line"><span>Nenhum produto adicionado</span><span>—</span></div></div><div class="total"><span>Total</span><span id="total">R$ 0,00</span></div></div>
+<form id="orderForm"><div><label for="name">SEU NOME</label><input id="name" required placeholder="Como podemos chamar você?"></div><div>
+<label>FORMA DE PAGAMENTO</label>
+<div class="payment-options" role="radiogroup" aria-label="Forma de pagamento">
+ <label class="payment-choice"><input type="radio" name="paymentChoice" value="PIX" required><span class="payment-card"><span class="payment-symbol">✦</span><strong>PIX</strong></span></label>
+ <label class="payment-choice"><input type="radio" name="paymentChoice" value="Dinheiro" required><span class="payment-card"><span class="payment-symbol">R$</span><strong>Dinheiro</strong></span></label>
+</div>
+<div class="change-field" id="changeField">
+ <label for="changeFor">PRECISA DE TROCO?</label>
+ <p>Se sim, informe para quanto você vai pagar. Se não precisar, pode deixar em branco.</p>
+ <input id="changeFor" inputmode="decimal" placeholder="Ex.: R$ 50,00">
+</div>
+</div><div><label for="details">OBSERVAÇÕES (OPCIONAL)</label><textarea id="details" rows="3" placeholder="Algum detalhe sobre seu pedido?"></textarea></div><button class="submit" type="submit">Preparar pedido</button></form>
+<p class="note">Após preparar o pedido, você poderá conferir os detalhes e combinar a retirada pelo Instagram <strong>@docetto.oficial</strong>. O pagamento será combinado diretamente com a Docetto.</p>
+</section></div></div>
+</main>
+<div class="dialog-backdrop" id="noticeDialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+ <div class="dialog">
+  <div class="dialog-mark">DOCETTO</div>
+  <h3 id="dialogTitle">Pedido preparado</h3>
+  <p id="dialogMessage">Seu pedido foi copiado. Agora é só colar na conversa do Instagram para confirmar e combinar a retirada.</p>
+  <button id="continueInstagram" type="button">Continuar para o Instagram</button>
+  <button class="secondary" id="closeDialog" type="button">Voltar ao site</button>
+ </div>
+</div>
+<a class="instagram-float" href="https://www.instagram.com/docetto.oficial/" target="_blank" rel="noopener">Acesse nosso Instagram ↗</a>
+<footer><div class="brand">DOCE<span style="color:#c7a98a">TTO</span></div><p>© 2026 Docetto. Todos os direitos reservados.</p><p><a href="https://www.instagram.com/docetto.oficial/" target="_blank" rel="noopener">@docetto.oficial</a></p></footer>
+<script>
+const cart={Cookie:0,Brownie:0};
+const selectedQty={Cookie:1,Brownie:1};
+const money=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+function changeQty(item,delta){selectedQty[item]=Math.max(1,selectedQty[item]+delta);document.getElementById('qty-'+item).textContent=selectedQty[item];}
+function add(item){cart[item]+=selectedQty[item];render();document.getElementById('pedido').scrollIntoView({behavior:'smooth'});}
+function render(){const box=document.getElementById('items');box.innerHTML='';let count=0,total=0;for(const [name,qty] of Object.entries(cart)){if(qty){count+=qty;total+=qty*10;const line=document.createElement('div');line.className='cart-line';line.innerHTML=`<span>${name} × ${qty}</span><span>${money(qty*10)}</span>`;box.appendChild(line)}}if(!count)box.innerHTML='<div class="cart-line"><span>Nenhum produto adicionado</span><span>—</span>';document.getElementById('total').textContent=money(total)}
+function removeOne(item){cart[item]=Math.max(0,cart[item]-1);render()}
+const paymentInputs=[...document.querySelectorAll('input[name="paymentChoice"]')];
+const paymentValue=()=>paymentInputs.find(input=>input.checked)?.value||'';
+const changeField=document.getElementById('changeField');
+paymentInputs.forEach(input=>input.addEventListener('change',()=>{
+ changeField.classList.toggle('show',input.value==='Dinheiro'&&input.checked);
+ if(input.value!=='Dinheiro')document.getElementById('changeFor').value='';
+}));
+const dialog=document.getElementById('noticeDialog');
+const showDialog=(message,showInstagram=true)=>{
+ document.getElementById('dialogMessage').textContent=message;
+ document.getElementById('continueInstagram').style.display=showInstagram?'block':'none';
+ dialog.classList.add('show');
+};
+document.getElementById('closeDialog').addEventListener('click',()=>dialog.classList.remove('show'));
+document.getElementById('continueInstagram').addEventListener('click',()=>{window.location.href='https://www.instagram.com/docetto.oficial/';});
+dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.classList.remove('show')});
+
+document.getElementById('orderForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ if(!cart.Cookie&&!cart.Brownie){
+   showDialog('Adicione pelo menos um produto ao seu pedido antes de continuar.',false);
+   return;
+ }
+ const name=document.getElementById('name').value;
+ const payment=paymentValue();
+ const changeFor=payment==='Dinheiro'?(document.getElementById('changeFor').value.trim()||'Não precisa de troco'):'Não se aplica';
+ const details=document.getElementById('details').value;
+ const lines=Object.entries(cart).filter(([k,v])=>v).map(([k,v])=>`${k}: ${v} x R$ 10,00`).join('\n');
+ const total=(cart.Cookie+cart.Brownie)*10;
+ const order=`PEDIDO DOCETTO\n\nCliente: ${name}\n${lines}\nTotal: ${money(total)}\nPagamento: ${payment}\nTroco: ${changeFor}\nObservações: ${details||'Nenhuma'}\n\nOlá! Gostaria de confirmar este pedido e combinar a retirada.`;
+ let copied=false;
+ try{
+   await navigator.clipboard.writeText(order);
+   copied=true;
+ }catch(err){
+   const area=document.createElement('textarea');
+   area.value=order;area.style.position='fixed';area.style.opacity='0';
+   document.body.appendChild(area);area.focus();area.select();
+   try{copied=document.execCommand('copy')}catch(e){}
+   area.remove();
+ }
+ if(copied){
+   showDialog('Seu pedido foi copiado. Ao continuar, o Instagram da Docetto será aberto. Na conversa, é só colar a mensagem para confirmar o pedido e combinar a retirada.');
+ }else{
+   showDialog('Não conseguimos copiar automaticamente neste navegador. Você pode voltar ao site e tentar novamente, ou copiar os dados do pedido manualmente.',false);
+   const pre=document.createElement('pre');pre.textContent=order;
+   pre.style.whiteSpace='pre-wrap';pre.style.padding='18px';pre.style.background='#f5efe5';pre.style.color='#34251d';
+   document.getElementById('orderForm').after(pre);
+ }
+});
+</script>
+</body></html>
